@@ -1,0 +1,181 @@
+<!-- Ejercicio 1: Aplicacion Pelicula favorita-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Película Favorita - Qué esperar cuando estás esperando </title>
+    <link rel="stylesheet" href="/exercises1/style.css">
+</head>
+<body>
+    <header>
+        <h1>What to Expect When You're Expecting (2012) </h1>
+        <p>  </p>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="pelicula-info">
+                <h2>Información General</h2>
+                
+                <img src="/exercises1/image/imgpeli.jpg" 
+                     alt="Póster de la película" 
+                     class="movie-image">
+
+                <div class="sinopsis">
+                    <h3>Sinopsis</h3>
+                    <p>La película sigue la vida de cinco parejas que están a punto de experimentar la aventura, los temores, el humor y los desafíos del embarazo y la paternidad. A través de sus historias, se muestran las emociones y complicaciones que surgen mientras se preparan para convertirse en madres y padres, reflejando tanto los momentos divertidos como los difíciles de esta etapa de la vida.</p>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2012</div>
+                        <div>Año</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">110</div>
+                        <div>Minutos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Lionsgate</div>
+                        <div>Compañia</div>
+                    </div>
+
+                </div>
+
+                <h3>Reparto Principal</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Actor</th>
+                            <th>Personaje</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cameron Diaz</td>
+                            <td>Jules</td>
+                            <td>Una famosa instructora de fitness</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Lopez</td>
+                            <td>Holly</td>
+                            <td>Una fotógrafa que quiere adoptar un bebé</td>
+                        </tr>
+                        <tr>
+                            <td>Elizabeth Banks</td>
+                            <td>Wendy</td>
+                            <td>Una mujer que enfrenta los retos de la maternidad y su relación.</td>
+                        </tr>
+                        <tr>
+                            <td>Anna Kendrick</td>
+                            <td>Roosie</td>
+                            <td>Quien tiene una relación con Marco y está involucrada en una competencia de food trucks</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Dennis Quaid</td>
+                            <td>Ramsey Cooper</td>
+                            <td>Esposo de Skyler y padre de Gary</td>
+                        </tr>
+                        <tr>
+                            <td>Brookling Decker</td>
+                            <td>Skyler</td>
+                            <td>Futura madre de gemelos</td>
+                        </tr>
+                        <tr>
+                            <td>Chace Crawford</td>
+                            <td>Marco</td>
+                            <td>Pareja de Roosie y competidor en la guerra de food trucks</td>
+                        </tr>
+                        <tr>
+                            <td>Rodrigo Santoro</td>
+                            <td>Alex</td>
+                            <td>Pareja de Holly</td>
+                        </tr>
+                        <tr>
+                            <td>Mattew Morrison</td>
+                            <td>Evan Weber</td>
+                            <td>Pareja de Jules</td>
+                        </tr>
+                        <tr>
+                            <td>Ben Falcon</td>
+                            <td>Gary Cooper</td>
+                            <td>Pareja de Wendy</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                <h3>¿Por qué es mi película favorita?</h3>
+                <p>Me gusta esta pelicula porque muestra una perpectiva cómica y sincera sobre la etapa del matrimonio al momento de formar una familia, que atravieza cada pareja de todas formas y maneras distintas. Todas son especiales. Cada familia son únicas y especiales por igual.</p>
+
+
+                <h3>Enlaces de Interés</h3>
+                <ul>
+                    <li><a href="https://www.filmaffinity.com/es/film512208.html" target="_blank">FilmAffinity</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <section class="controls">
+                <h3 style="color: white; margin-top: 0;"></h3>
+                <button onclick="cambiarColor()">Cambiar Color de Fondo</button>
+                <button onclick="contarClics()">Contar Clics</button>
+                <button onclick="toggleInfo()">Mostrar/Ocultar Info</button>
+                <button onclick="mostrarFecha()">Mostrar Fecha y Hora</button>
+            </section>
+
+            <div class="contador">
+                <p>Clics realizados: <span id="contadorClics">0</span></p>
+            </div>
+
+            <div class="fecha-hora" id="fechaHora"></div>
+
+
+            <section class="info-adicional" id="infoAdicional">
+                <h3>Información Adicional</h3>
+
+                <div class="stat-card">
+                    <p><strong>Género</strong></p>
+                        <ul>
+                        <li>Romance</li>
+                        <li>Comedia</li>
+                        <li>Comedia romántica</li>
+                        <li>Familia</li>
+                        <li>Historias cruzadas</li>
+                        <li>Maternidad</li>
+                        </ul>
+                </div>
+
+                <div class="stat-card">
+                    <p><strong>Dirección</strong></p>
+                        <ul>
+                            <li>Kirk Jones</li>
+                        </ul>
+                </div>
+
+                <div class="stat-card">
+                    <p><strong>Ubicación</strong></p>
+                        <ul>
+                            <li>Estados Unidos</li>
+                        </ul>
+                </div>
+            </section>
+
+
+
+
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; Santa Cruz Ana Cesia - Instituto Barranqueras N°161 - TSDS 3er Año - 2.025</p>
+    </footer>
+
+    <script src="/exercises1/script.js"></script>
+</body>
+</html>

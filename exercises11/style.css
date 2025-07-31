@@ -1,0 +1,101 @@
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: rgb(88, 15, 245); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .calculator h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        h5 { /* New style for h5, same as h1 */
+            color: #ffffff;
+            font-size: 2em; /* Assuming h1 has a font-size of 2em by default or from its own styles */
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .display {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-align: right;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .buttons button:hover {
+            opacity: 0.9;
+        }
+
+        .number, .decimal {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .number:hover, .decimal:hover {
+            background-color: #d0d0d0;
+        }
+
+        .operator {
+            background-color: black; /* Changed to black */
+            color: white;
+        }
+
+        .operator:hover {
+            background-color: #444;
+        }
+
+        .clear {
+            background-color: #ff6347;
+            color: white;
+        }
+
+        .clear:hover {
+            background-color: #e55337;
+        }
+
+        .equals {
+            background-color: #28a745;
+            color: white;
+            grid-row: span 2;
+        }
+
+        .equals:hover {
+            background-color: #218838;
+        }
+
+        .zero {
+            grid-column: span 2;
+        }
+        

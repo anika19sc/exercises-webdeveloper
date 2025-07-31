@@ -1,0 +1,47 @@
+<!-- Ejercicio 11: Calculadora. Clase 10/07 y Clase 17/07 
+> **`CONSIGNA DE PRACTICA SOBRE EL MISMO ARCHIVO`**
+> 1. Ubicar en el CSS la clase que da estilo a los botones de operaciones (+, -, *, /), y cambiarles el color a NEGRO. 
+A la clase que da estilos a la calculadora, cambiar el color de fondo a VIOLETA, según la imagen. 
+CREAR un estilo para encabezado de nivel 5, "h5",  con los mismos valores que "h1"
+> 
+> 2. En el HTML, agregar a las operaciones los botones de paréntesis, reubicando los demás botones según la imagen. 
+También agregar el nombre del alumno debajo de CALCULADORA con un "h5"
+> 
+> 3. En el JAVASCRIPT modificar el bloque de código SOPORTE PARA TECLADO para que acepte los paréntesis.
+> -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <link rel="stylesheet" href="/exercises11/style.css">
+
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <h5>Anik's</h5> <input type="text" class="display" id="display" readonly>
+        
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="clear" onclick="deleteLast()">⌫</button>
+            <button class="operator" onclick="appendToDisplay('(')">(</button> <button class="operator" onclick="appendToDisplay(')')">)</button> <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">&div;</button> <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">&times;</button> <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button> <button class="number zero" onclick="appendToDisplay('0')">0</button>
+            <button class="decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button> <button class="equals" onclick="calculate()">=</button> </div>
+    </div>
+
+    <script src="/exercises11/script.js"> </script>
+
+</body>
+</html>

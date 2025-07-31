@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Santa Cruz - Portafolio</title>
+    <link rel="stylesheet" href="/exercises4/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="container-header">
+	
+	<nav>
+		<div class="navbar-brand">
+		</div>
+		<div class="navbar-menu">
+			<div id="burguer-container">
+				<span onclick="openMenu()" class="burguer-menu">
+				  <i class="fas fa-bars"></i>
+				</span>
+			</div>
+			
+			<div id="menu-options">
+				<ul>
+					<li>
+						<a id="1" onclick="goToSection(this)">Acerca de</a>
+					</li>
+					<li>
+						<a id="habilidades-nav" onclick="goToSection(this)">Habilidades</a> </li>
+					<li>
+						<a id="proyectos-nav" onclick="goToSection(this)">Proyectos</a> </li>
+				</ul>
+			</div>
+		</div>
+    </nav>
+	
+	<div data-aos="fade-up" class="text-header">
+		<div class="text-title">
+			<h1>Hola, Soy Ana!</h1>
+			<p>Backend Dev Junior</p>
+			<a id="1" onclick="goToSection(this)" class="btn">Conoceme</a>
+		</div>
+	</div>
+	
+</div>
+
+	<section class="about-me" id="1-section">
+		<div data-aos="fade-up" class="profile-container">
+			<div class="profile-photo">
+				<img src="/exercises4/image/yo.jpeg" alt="Profile Picture" width="150" height="150">
+			</div>
+			<h3 data-aos="fade-up">Acerca de mi</h3>
+			<p data-aos="fade-up">
+				Mi nombre es Ana Santa Cruz y soy <strong>Desarrolladora Backend</strong>. Tengo experiencia a nivel de soporte tecnico y me estoy aventurando en el mundo del desarrollo backend. 
+                <br> ¿Por qué elegí el rubro IT? </br> 
+                Porque me gusta la tecnología, y eso me motiva a aprender cada herramienta que la compone. Me gusta la programación porque la entiendo, porque me reta. 
+            <br> Cuando comprendo un problema, un error o un bug, me concentro en encontrar la lógica detrás y pensar posibles soluciones.
+            <br> Todavía tengo un largo camino por recorrer. Estoy construyendo mis conocimientos desde cero, paso a paso, aprendiendo las bases con paciencia. </br>
+			</p>
+            <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/FD7E14/source-code.png" alt="source-code"/>        </div>
+	</section>
+
+<div class="separator"></div>
+
+<section class="section skills-section" id="habilidades-section"> <h2 data-aos="fade-up">Habilidades</h2>
+    <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up">
+
+            <h3>Lenguajes de Programación</h3>
+            <p>Python, Java, JavaScript, TypeScript.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Frameworks & Librerías</h3>
+            <p>Django, FastAPI, Express.js, Node.js, Sequelize, Angular</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>Bases de Datos</h3>
+            <p>PostgreSQL, MySQL, Sqlite</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>DevOps & Cloud</h3>
+            <p>Docker, Kubernetes</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+            <h3>APIs & Microservicios</h3>
+            <p>REST, JSON</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+            <h3>Testing & Calidad</h3>
+            <p>Postman</p>
+        </div>
+    </div>
+</section>
+
+<div class="separator" style="margin-top: 50px"></div>
+
+<section class="section projects-section" id="proyectos-section"> <h2 data-aos="fade-up">Proyectos</h2>
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            <div class="project-image">
+                <span>Practicas Institucionales-Pasantias</span>
+            </div>
+            <div class="project-info">
+                <h3>Aplicación Countries</h3>
+                <p>Plataforma para web y móviles. Mantenimiento y actualización del sistema.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">TypeScript</span>
+                </div>
+            </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+                <span>Gestor de Supermercado</span>
+            </div>
+            <div class="project-info">
+                <h3>Aplicación para gestión Productos de Supermercado.</h3>
+                <p>Registro, Actualización, Eliminación de productos.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">PostgresSQL</span>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+
+<section class="contact-me">
+	<div class="contact-me-p">
+		<div class="card-contact-me">
+			
+			<div data-aos="fade-up" class="row">
+				<div class="column col-6">
+					<p class="card-start-proyect mg-bt">
+                        <img width="96" height="96" src="https://img.icons8.com/liquid-glass/96/plant-under-sun.png" alt="plant-under-sun"/>
+						Iniciemos un proyecto!
+                        <img width="48" height="48" src="https://img.icons8.com/liquid-glass/48/crab.png" alt="crab"/>
+					</p>
+					<a class="card-contact-btn" >Contactame</a>
+				</div>
+				<div class="column col-6">
+					<p class="card-start-proyect-1">
+						</p>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                    </form>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<section>
+	<div data-aos="fade-up" class="social-networks-container">
+		<div class="network-icons">
+			<ul class="list-networks">
+				<li class="icon">
+					<a class="twitter" href="https://twitter.com/Acevedo1993C" target="_blank">
+						<i class="fab fa-twitter"></i>
+					</a>
+				</li>
+				<li class="icon">
+					<a class="github" href="https://github.com/k4dm3l" target="_blank">
+						<i class="fab fa-github"></i>
+					</a>
+				</li>
+				<li class="icon">
+					<a class="linkedin" href="https://www.linkedin.com/in/camilo-acevedo-0819a1179/" target="_blank">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+    <footer>
+        <p>&copy; Ana Santa Cruz -2.025 Todos los derechos reservados.</p>
+    </footer>
+    <script src="/exercises4/script.js"></script>
+</body>
+
+</html>
