@@ -1,12 +1,118 @@
-<!--Ejercio 5: Aplicacion gastos personales -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestión de Gastos Personales</title>
+    <link rel="stylesheet" href="/exercises5/style.css">
+    <script src="/exercises5/script.js"></script>
+
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>Gestión de Gastos Personales</h1>
+        </header>
+
+        <!-- Formulario para agregar gastos -->
+        <section id="add-expense-form">
+            <h2>Agregar Nuevo Gasto</h2>
+            <form id="expense-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="description">Descripción:</label>
+                        <input type="text" id="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Cantidad ($):</label>
+                        <input type="number" id="amount" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Categoría:</label>
+                        <select id="category" required>
+                            <option value="">Seleccionar categoría</option>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Entretenimiento">Entretenimiento</option>
+                            <option value="Seguro de Salud">Salud</option>
+                            <option value="Educación">Educación</option>
+                            <option value="Ropa">Ropa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha:</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Método de pago:</label>
+                        <select id="payment-method" required>
+                            <option value="">Seleccionar método</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Tarjeta de débito">Tarjeta de débito</option>
+                            <option value="Transferencia">Transferencia</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Agregar Gasto</button>
+            </form>
+        </section>
+
+        <!-- Total de gastos -->
+        <section id="totals">
+            <h2>Total de Gastos</h2>
+            <div id="total-amount">$0.00</div>
+        </section>
+
+        <!-- Filtros -->
+        <section id="filters">
+            <h2>Filtros</h2>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="filter-category">Filtrar por categoría:</label>
+                    <select id="filter-category">
+                        <option value="">Todas las categorías</option>
+                        <option value="Alimentación">Alimentación</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Entretenimiento">Entretenimiento</option>
+                        <option value="Seguro de Salud">Salud</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Ropa">Ropa</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-date">Filtrar por fecha:</label>
+                    <input type="date" id="filter-date">
+                </div>
+                <div class="filter-group">
+                    <label>&nbsp;</label>
+                    <button type="button" class="btn" onclick="clearFilters()">Limpiar Filtros</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabla de gastos -->
+        <section id="expenses-table">
+            <h2>Lista de Gastos</h2>
+            <table id="expenses">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Monto</th>
+                        <th>Método de pago</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Los gastos se cargarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
 </body>
 </html>
