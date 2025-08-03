@@ -1,1 +1,113 @@
 <!--Ejercicio: Aplicacion de Quiz de preguntas y respuestas -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactivo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <!-- Pantalla de inicio -->
+                <transition name="fade" mode="out-in">
+                    <div v-if="gameState === 'start'" key="start">
+                        <div class="quiz-header">
+                            <h1>🧠 Quiz Interactivo</h1>
+                            <h2>creado por: Anika</h2>
+                            <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">
+                                ¡Pon a prueba tus conocimientos!<br>
+                                Responde {{ totalQuestions }} preguntas en tiempo limitado
+                            </p>
+                        </div>
+                        <button class="btn" @click="startQuiz">COMIENZA YA</button>
+                    </div>
+
+                    <!-- Pantalla del quiz -->
+                    <div v-else-if="gameState === 'playing'" key="playing">
+                        <div class="question-counter">
+                            Pregunta {{ currentQuestionIndex + 1 }} de {{ totalQuestions }}
+                        </div>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar" :style="{ width: progressPercentage + '%' }"></div>
+                        </div>
+
+                        <div class="timer" :class="{ danger: timeLeft <= 5 }">
+                            ⏰ {{ timeLeft }}s
+                        </div>
+
+                        <transition name="slide" mode="out-in">
+                            <div :key="currentQuestionIndex">
+                                <div class="question">
+                                    {{ currentQuestion.question }}
+                                </div>
+
+                                <div class="options">
+                                    <div 
+                                        v-for="(option, index) in currentQuestion.options" 
+                                        :key="index"
+                                        class="option"
+                                        :class="{
+                                            selected: selectedAnswer === index,
+                                            correct: showFeedback && index === currentQuestion.correct,
+                                            incorrect: showFeedback && selectedAnswer === index && index !== currentQuestion.correct,
+                                            disabled: showFeedback
+                                        }"
+                                        @click="selectAnswer(index)"
+                                    >
+                                        {{ option }}
+                                        <span v-if="showFeedback && index === currentQuestion.correct" class="option-icon">✅</span>
+                                        <span v-else-if="showFeedback && selectedAnswer === index && index !== currentQuestion.correct" class="option-icon">❌</span>
+                                    </div>
+                                </div>
+
+                                <button 
+                                    class="btn" 
+                                    :disabled="selectedAnswer === null || showFeedback"
+                                    @click="submitAnswer"
+                                >
+                                    {{ showFeedback ? 'Procesando...' : 'Confirmar Respuesta' }}
+                                </button>
+                            </div>
+                        </transition>
+                    </div>
+
+                    <!-- Pantalla de resultados -->
+                    <div v-else-if="gameState === 'results'" key="results">
+                        <div class="results">
+                            <h1>🎉 ¡Quiz Completado!</h1>
+                            
+                            <div class="score-circle">
+                                <div class="score-inner">
+                                    <div class="score-percentage">{{ scorePercentage }}%</div>
+                                    <div class="score-text">{{ correctAnswers }}/{{ totalQuestions }}</div>
+                                </div>
+                            </div>
+
+                            <div class="feedback" :class="feedbackClass">
+                                {{ feedbackMessage }}
+                            </div>
+
+                            <p style="margin: 20px 0; font-size: 1.1rem; color: #666;">
+                                Respondiste correctamente {{ correctAnswers }} de {{ totalQuestions }} preguntas
+                            </p>
+
+                            <div>
+                                <button class="btn" @click="restartQuiz">🔄 Intentar de Nuevo</button>
+                                <button class="btn secondary" @click="gameState = 'start'">🏠 Inicio</button>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
